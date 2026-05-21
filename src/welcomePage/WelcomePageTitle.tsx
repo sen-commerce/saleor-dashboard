@@ -10,8 +10,8 @@ export const WelcomePageTitle = () => {
   return (
     <Text as="h1" size={9} data-test-id="home-header">
       <FormattedMessage
-        defaultMessage="Hello {userName}, welcome to your Store Dashboard"
-        id="0+zatS"
+        defaultMessage="Hello Sen {userName}, welcome to your Store Dashboard"
+        id="YqeEFT"
         values={{
           userName,
         }}

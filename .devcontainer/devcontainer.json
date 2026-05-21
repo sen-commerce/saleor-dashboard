@@ -8,5 +8,16 @@
     "5005": {
        "label": "Saleor Dashboard"
     }
+  },
+  "postCreateCommand": "pnpm run generate",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-next",
+        "bradlc.vscode-tailwindcss"
+      ]
+    }
   }
 }
