@@ -1568,6 +1568,13 @@ export const StockFragmentDoc = gql`
   }
 }
     ${WarehouseFragmentDoc}`;
+export const MoneyWithFractionDigitsFragmentDoc = gql`
+    fragment MoneyWithFractionDigits on Money {
+  amount
+  currency
+  fractionDigits
+}
+    `;
 export const TaxedMoneyFragmentDoc = gql`
     fragment TaxedMoney on TaxedMoney {
   net {
@@ -1587,8 +1594,14 @@ export const OrderLineDiscountFragmentDoc = gql`
   valueType
   value
   reason
+  total {
+    ...Money
+  }
+  unit {
+    ...Money
+  }
 }
-    `;
+    ${MoneyFragmentDoc}`;
 export const OrderLineFragmentDoc = gql`
     fragment OrderLine on OrderLine {
   id
@@ -1623,10 +1636,21 @@ export const OrderLineFragmentDoc = gql`
   quantityFulfilled
   quantityToFulfill
   totalPrice {
-    ...TaxedMoney
+    gross {
+      ...MoneyWithFractionDigits
+    }
+    net {
+      ...Money
+    }
+    tax {
+      ...Money
+    }
   }
   undiscountedTotalPrice {
     ...TaxedMoney
+    tax {
+      ...Money
+    }
   }
   unitDiscount {
     amount
@@ -1645,6 +1669,10 @@ export const OrderLineFragmentDoc = gql`
       amount
       currency
     }
+    tax {
+      amount
+      currency
+    }
   }
   unitPrice {
     gross {
@@ -1655,7 +1683,17 @@ export const OrderLineFragmentDoc = gql`
       amount
       currency
     }
+    tax {
+      amount
+      currency
+    }
   }
+  taxRate
+  taxClass {
+    id
+    name
+  }
+  voucherCode
   thumbnail {
     url
   }
@@ -1664,6 +1702,8 @@ export const OrderLineFragmentDoc = gql`
   }
 }
     ${StockFragmentDoc}
+${MoneyWithFractionDigitsFragmentDoc}
+${MoneyFragmentDoc}
 ${TaxedMoneyFragmentDoc}
 ${OrderLineDiscountFragmentDoc}`;
 export const OrderDiscountFragmentDoc = gql`
@@ -1671,10 +1711,14 @@ export const OrderDiscountFragmentDoc = gql`
   id
   type
   name
+  translatedName
   calculationMode: valueType
   value
   reason
   amount {
+    ...Money
+  }
+  total {
     ...Money
   }
 }
@@ -2306,7 +2350,11 @@ export const OrderDetailsFragmentDoc = gql`
   userEmail
   voucher {
     id
+    name
+    code
+    type
   }
+  voucherCode
   shippingMethods {
     id
     name
@@ -16211,6 +16259,41 @@ export function useGridWarehousesLazyQuery(baseOptions?: ApolloReactHooks.LazyQu
 export type GridWarehousesQueryHookResult = ReturnType<typeof useGridWarehousesQuery>;
 export type GridWarehousesLazyQueryHookResult = ReturnType<typeof useGridWarehousesLazyQuery>;
 export type GridWarehousesQueryResult = Apollo.QueryResult<Types.GridWarehousesQuery, Types.GridWarehousesQueryVariables>;
+export const StockVisibilityModeDocument = gql`
+    query StockVisibilityMode {
+  shop {
+    id
+    useLegacyShippingZoneStockAvailability
+  }
+}
+    `;
+
+/**
+ * __useStockVisibilityModeQuery__
+ *
+ * To run a query within a React component, call `useStockVisibilityModeQuery` and pass it any options that fit your needs.
+ * When your component renders, `useStockVisibilityModeQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useStockVisibilityModeQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useStockVisibilityModeQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<Types.StockVisibilityModeQuery, Types.StockVisibilityModeQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<Types.StockVisibilityModeQuery, Types.StockVisibilityModeQueryVariables>(StockVisibilityModeDocument, options);
+      }
+export function useStockVisibilityModeLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<Types.StockVisibilityModeQuery, Types.StockVisibilityModeQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<Types.StockVisibilityModeQuery, Types.StockVisibilityModeQueryVariables>(StockVisibilityModeDocument, options);
+        }
+export type StockVisibilityModeQueryHookResult = ReturnType<typeof useStockVisibilityModeQuery>;
+export type StockVisibilityModeLazyQueryHookResult = ReturnType<typeof useStockVisibilityModeLazyQuery>;
+export type StockVisibilityModeQueryResult = Apollo.QueryResult<Types.StockVisibilityModeQuery, Types.StockVisibilityModeQueryVariables>;
 export const ChannelDiagnosticsDocument = gql`
     query ChannelDiagnostics {
   shop {
