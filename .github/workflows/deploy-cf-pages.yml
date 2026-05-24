@@ -67,10 +67,12 @@ jobs:
           STATIC_URL: /dashboard/
           IS_CLOUD_INSTANCE: true
 
+      - name: Install Wrangler Globally
+        run: npm install -g wrangler
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy build/dashboard/ --project-name=saleor-dashboard --branch=${{ github.ref_name }}
-          packageManager: npm
