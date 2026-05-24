@@ -188,7 +188,7 @@ export function getProductUpdatePageFormData(
   product: ProductFragment,
   variants: ProductDetailsVariantFragment[],
 ): ProductUpdateFormData {
-  const variant = product?.variants[0];
+  const variant = product?.variants?.[0];
 
   return {
     category: maybe(() => product.category.id, ""),
