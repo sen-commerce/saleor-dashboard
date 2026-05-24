@@ -63,8 +63,8 @@ jobs:
         run: pnpm run build
         env:
           API_URL: https://api.tiptoppick.com/graphql/
-          APP_MOUNT_URI: /dashboard/
-          STATIC_URL: /dashboard/
+          APP_MOUNT_URI: /
+          STATIC_URL: /
           IS_CLOUD_INSTANCE: true
 
       - name: Install Wrangler Globally
