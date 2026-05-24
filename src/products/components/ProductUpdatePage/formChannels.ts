@@ -166,14 +166,15 @@ export function useProductChannelListingsForm(
     // IMPORTANT: We preserve original values including null for isAvailableForPurchase
     // This ensures we don't change API values as a side effect when saving
     // Dirty detection normalizes null/false during comparison (both mean "not available")
-    updateChannels: product?.channelListings.map(listing => ({
-      channelId: listing.channel.id,
-      isPublished: listing.isPublished,
-      publishedAt: listing.publishedAt,
-      isAvailableForPurchase: listing.isAvailableForPurchase, // Preserve null - don't normalize
-      availableForPurchaseAt: listing.availableForPurchaseAt,
-      visibleInListings: listing.visibleInListings,
-    })),
+    updateChannels:
+      product?.channelListings?.map(listing => ({
+        channelId: listing.channel.id,
+        isPublished: listing.isPublished,
+        publishedAt: listing.publishedAt,
+        isAvailableForPurchase: listing.isAvailableForPurchase, // Preserve null - don't normalize
+        availableForPurchaseAt: listing.availableForPurchaseAt,
+        visibleInListings: listing.visibleInListings,
+      })) ?? [],
   });
   const touched = useRef<string[]>([]);
   const touch = (id: string) => {
