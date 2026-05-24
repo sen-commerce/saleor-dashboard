@@ -172,7 +172,7 @@ const ProductMedia = (props: ProductMediaProps) => {
           />
         </Box>
         <Box position="relative">
-          {media === undefined ? (
+          {!media ? (
             <Box padding={5}>
               <Skeleton />
             </Box>

@@ -116,7 +116,7 @@ export function getData({
   if (getColumnStock(columnId)) {
     const value =
       change?.value ??
-      dataRow?.stocks.find(stock => stock.warehouse.id === getColumnStock(columnId))?.quantity ??
+      dataRow?.stocks?.find(stock => stock.warehouse.id === getColumnStock(columnId))?.quantity ??
       numberCellEmptyValue;
 
     return numberCell(value);
@@ -124,7 +124,7 @@ export function getData({
 
   if (getColumnChannel(columnId)) {
     const channelId = getColumnChannel(columnId);
-    const listing = dataRow?.channelListings.find(listing => listing.channel.id === channelId);
+    const listing = dataRow?.channelListings?.find(listing => listing.channel.id === channelId);
     const available =
       changes.current[getChangeIndex(`availableInChannel:${channelId}`, row)]?.data ?? !!listing;
 
@@ -144,7 +144,7 @@ export function getData({
 
   if (getColumnChannelAvailability(columnId)) {
     const channelId = getColumnChannelAvailability(columnId);
-    const listing = dataRow?.channelListings.find(listing => listing.channel.id === channelId);
+    const listing = dataRow?.channelListings?.find(listing => listing.channel.id === channelId);
     const value = change ?? !!listing;
 
     return booleanCell(value);
@@ -154,7 +154,7 @@ export function getData({
     const value =
       change?.value ??
       mapNodeToChoice(
-        dataRow?.attributes.find(
+        dataRow?.attributes?.find(
           attribute => attribute.attribute.id === getColumnAttribute(columnId),
         )?.values,
       )[0] ??
