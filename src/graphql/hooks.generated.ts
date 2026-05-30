@@ -504,6 +504,9 @@ export const CustomerDetailsFragmentDoc = gql`
   }
   note
   isActive
+  isConfirmed
+  isStaff
+  externalReference
 }
     ${CustomerFragmentDoc}
 ${AddressFragmentDoc}`;
@@ -7459,7 +7462,8 @@ export const CustomerDetailsDocument = gql`
     privateMetadata @include(if: $PERMISSION_MANAGE_STAFF) {
       ...MetadataItem
     }
-    orders(first: 5) @include(if: $PERMISSION_MANAGE_ORDERS) {
+    orders(first: 10) @include(if: $PERMISSION_MANAGE_ORDERS) {
+      totalCount
       edges {
         node {
           id
@@ -7473,14 +7477,6 @@ export const CustomerDetailsDocument = gql`
             }
           }
           chargeStatus
-        }
-      }
-    }
-    lastPlacedOrder: orders(first: 1) @include(if: $PERMISSION_MANAGE_ORDERS) {
-      edges {
-        node {
-          id
-          created
         }
       }
     }
@@ -10829,11 +10825,14 @@ export type GiftCardProductsCountQueryHookResult = ReturnType<typeof useGiftCard
 export type GiftCardProductsCountLazyQueryHookResult = ReturnType<typeof useGiftCardProductsCountLazyQuery>;
 export type GiftCardProductsCountQueryResult = Apollo.QueryResult<Types.GiftCardProductsCountQuery, Types.GiftCardProductsCountQueryVariables>;
 export const CustomerGiftCardListDocument = gql`
-    query CustomerGiftCardList($first: Int, $filter: GiftCardFilterInput) {
-  giftCards(first: $first, filter: $filter) {
-    edges {
-      node {
-        ...CustomerGiftCard
+    query CustomerGiftCardList($userId: ID!, $first: Int) {
+  user(id: $userId) {
+    id
+    giftCards(first: $first) {
+      edges {
+        node {
+          ...CustomerGiftCard
+        }
       }
     }
   }
@@ -10852,12 +10851,12 @@ export const CustomerGiftCardListDocument = gql`
  * @example
  * const { data, loading, error } = useCustomerGiftCardListQuery({
  *   variables: {
+ *      userId: // value for 'userId'
  *      first: // value for 'first'
- *      filter: // value for 'filter'
  *   },
  * });
  */
-export function useCustomerGiftCardListQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<Types.CustomerGiftCardListQuery, Types.CustomerGiftCardListQueryVariables>) {
+export function useCustomerGiftCardListQuery(baseOptions: ApolloReactHooks.QueryHookOptions<Types.CustomerGiftCardListQuery, Types.CustomerGiftCardListQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
         return ApolloReactHooks.useQuery<Types.CustomerGiftCardListQuery, Types.CustomerGiftCardListQueryVariables>(CustomerGiftCardListDocument, options);
       }
@@ -18925,7 +18924,7 @@ export type ChangeUserPasswordMutationHookResult = ReturnType<typeof useChangeUs
 export type ChangeUserPasswordMutationResult = Apollo.MutationResult<Types.ChangeUserPasswordMutation>;
 export type ChangeUserPasswordMutationOptions = Apollo.BaseMutationOptions<Types.ChangeUserPasswordMutation, Types.ChangeUserPasswordMutationVariables>;
 export const StaffListDocument = gql`
-    query StaffList($first: Int, $after: String, $last: Int, $before: String, $filter: StaffUserInput, $sort: UserSortingInput) {
+    query StaffList($first: Int, $after: String, $last: Int, $before: String, $filter: StaffUserInput, $sort: UserSortingInput, $includeCustomerData: Boolean = false) {
   staffUsers(
     before: $before
     after: $after
@@ -18940,6 +18939,13 @@ export const StaffListDocument = gql`
         ...StaffMember
         avatar(size: 128) {
           url
+        }
+        orders(first: 1) @include(if: $includeCustomerData) {
+          edges {
+            node {
+              id
+            }
+          }
         }
       }
     }
@@ -18971,6 +18977,7 @@ export const StaffListDocument = gql`
  *      before: // value for 'before'
  *      filter: // value for 'filter'
  *      sort: // value for 'sort'
+ *      includeCustomerData: // value for 'includeCustomerData'
  *   },
  * });
  */
@@ -18989,6 +18996,13 @@ export const StaffMemberDetailsDocument = gql`
     query StaffMemberDetails($id: ID!) {
   user(id: $id) {
     ...StaffMemberDetails
+    orders(first: 1) {
+      edges {
+        node {
+          id
+        }
+      }
+    }
   }
 }
     ${StaffMemberDetailsFragmentDoc}`;
