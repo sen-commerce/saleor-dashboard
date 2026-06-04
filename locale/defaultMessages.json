@@ -50,6 +50,10 @@
     "context": "tax class for a product type",
     "string": "Tax class"
   },
+  "+LyCI8": {
+    "context": "detail page top bar, settings menu button tooltip",
+    "string": "More actions"
+  },
   "+PclgM": {
     "context": "tabel column header",
     "string": "Total"
@@ -299,6 +303,10 @@
   "/jJLYy": {
     "string": "Transactions"
   },
+  "/js4TV": {
+    "context": "aria label for pinning a tab",
+    "string": "Pin tab"
+  },
   "/kWzY1": {
     "string": "Are you sure you want to delete this address from users address book?"
   },
@@ -359,6 +367,10 @@
   },
   "/zFGgP": {
     "string": "+{count} more"
+  },
+  "/zb21Y": {
+    "context": "tab name for all models",
+    "string": "All"
   },
   "0+sGhF": {
     "context": "Suffix for show-more button when hidden problems include active ones",
@@ -642,6 +654,10 @@
     "context": "button",
     "string": "Add postal code range"
   },
+  "1m5f0E": {
+    "context": "product detail page menu, opens product type configuration",
+    "string": "Product type settings"
+  },
   "1n1tOR": {
     "string": "Group is out of your permission scope"
   },
@@ -702,6 +718,10 @@
   "26BKkX": {
     "context": "order status",
     "string": "Partially returned"
+  },
+  "26U5ba": {
+    "context": "product type scope link in product header, opens filtered catalog list",
+    "string": "View products of {productTypeName}"
   },
   "28vvyx": {
     "context": "deselect all values button",
@@ -3514,6 +3534,14 @@
     "context": "draft created from replace event title",
     "string": "Draft was reissued from order"
   },
+  "H6ad9p": {
+    "context": "product variant detail page, top-bar metadata button tooltip",
+    "string": "Edit variant metadata"
+  },
+  "H9gOMX": {
+    "context": "deprecation banner shown in the sidebar",
+    "string": "This Saleor version is deprecated and will be automatically upgraded on {date}."
+  },
   "HA0fD3": {
     "string": "Channel created"
   },
@@ -4440,6 +4468,10 @@
   },
   "MKtgZB": {
     "string": "Only staff users can access the dashboard"
+  },
+  "ML+YsS": {
+    "context": "button",
+    "string": "Create {typeName}"
   },
   "MNZY28": {
     "context": "table column header",
@@ -5530,6 +5562,10 @@
     "context": "search placeholder",
     "string": "Search by product name, attribute, product type etc..."
   },
+  "S4l46I": {
+    "context": "tooltip on product type label in header when slug is missing and catalog filter link is unavailable",
+    "string": "Cannot open a filtered product list for this type. Use the menu to open product type settings."
+  },
   "S5/nSq": {
     "context": "grant refund table, column header",
     "string": "Quantity"
@@ -5969,10 +6005,6 @@
     "context": "Description for scheduled status when publication date is in the future",
     "string": "Publication scheduled"
   },
-  "UgCuqX": {
-    "context": "tab name",
-    "string": "All models"
-  },
   "Uh3NX/": {
     "context": "remove failed installation dialog content",
     "string": "Are you sure you want to delete {name} failed installation?"
@@ -6086,6 +6118,10 @@
   },
   "V2JtVu": {
     "string": "Same as implicit AND, using explicit keyword"
+  },
+  "V4Pdx+": {
+    "context": "product detail page, top-bar metadata button tooltip",
+    "string": "Edit product metadata"
   },
   "V8FhTt": {
     "context": "collection label",
@@ -6476,6 +6512,10 @@
   },
   "XOkUxQ": {
     "string": "Product unavailable in voucher channels"
+  },
+  "XP5btK": {
+    "context": "product variant metadata dialog header",
+    "string": "Variant Metadata"
   },
   "XPiJex": {
     "context": "Transaction void button - return preauthorized amount to client",
@@ -8440,6 +8480,10 @@
     "context": "SKU label inside the line price breakdown modal subtitle",
     "string": "SKU"
   },
+  "iLNRJL": {
+    "context": "product type a11y label prefix",
+    "string": "Product type"
+  },
   "iPg/Z+": {
     "context": "Pagination info showing current range",
     "string": "Showing {start}-{end} of {total}"
@@ -8631,6 +8675,10 @@
   },
   "jd/LWa": {
     "string": "Voucher applies to all countries"
+  },
+  "jg1Kcw": {
+    "context": "aria label for unpinning a tab",
+    "string": "Unpin tab"
   },
   "jg8M0x": {
     "context": "sub-header for line-level discounts in summary",
@@ -9021,6 +9069,10 @@
     "context": "header",
     "string": "Group members"
   },
+  "lHCpM4": {
+    "context": "empty state shown when search returns no results",
+    "string": "No models match \"{query}\""
+  },
   "lHccsy": {
     "context": "table head",
     "string": "Variant Name"
@@ -9305,6 +9357,10 @@
   },
   "mxtAFx": {
     "string": "Are you sure you want to delete draft #{orderNumber}?"
+  },
+  "mykruj": {
+    "context": "detail page top bar, translations button tooltip",
+    "string": "Open translations"
   },
   "mzASqs": {
     "context": "days after label",
@@ -9711,6 +9767,10 @@
   "pJ5/7G": {
     "string": "Close and hide all hints"
   },
+  "pLSGmd": {
+    "context": "product metadata dialog header",
+    "string": "Product Metadata"
+  },
   "pMAlSC": {
     "context": "Shown when a value cannot be determined due to permissions",
     "string": "Unknown"
@@ -10051,6 +10111,10 @@
   "quV5zH": {
     "context": "dialog title",
     "string": "Delete Token"
+  },
+  "qvaap2": {
+    "context": "order detail page, top-bar metadata button tooltip",
+    "string": "Edit order metadata"
   },
   "qwp4zK": {
     "context": "Health check subtitle when product can be purchased",
@@ -10776,6 +10840,10 @@
   },
   "uoKAmI": {
     "string": "Add new order"
+  },
+  "uq2aqJ": {
+    "context": "overflow tab label",
+    "string": "More"
   },
   "uqxjSR": {
     "context": "column picker section header",

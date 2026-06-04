@@ -40,6 +40,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 
 import { useAssignAttributeValueDialogFilterChangeHandlers } from "../../../components/AssignAttributeValueDialog/useAssignAttributeValueDialogFilterChangeHandlers";
 import { getMutationState } from "../../../misc";
+import { ProductMetadataDialog } from "../../components/ProductMetadataDialog/ProductMetadataDialog";
 import ProductUpdatePage from "../../components/ProductUpdatePage";
 import {
   productListUrl,
@@ -410,12 +411,13 @@ const ProductUpdate = ({ id, params }: ProductUpdateProps) => {
         limits={limitOpts.data?.shop.limits}
         saveButtonBarState={formTransitionState}
         media={data?.product?.media}
-        header={product?.name}
         product={product}
+        loading={loading}
         taxClasses={taxClasses ?? []}
         fetchMoreTaxClasses={fetchMoreTaxClasses}
         variants={product?.variants}
         onDelete={() => openModal("remove")}
+        onShowMetadata={() => openModal("view-metadata")}
         onImageReorder={handleImageReorder}
         onMediaUrlUpload={handleMediaUrlUpload}
         onSubmit={submit}
@@ -449,6 +451,11 @@ const ProductUpdate = ({ id, params }: ProductUpdateProps) => {
         onFilterChange={onFilterChange}
         onBulkCreateVariants={handleBulkCreateVariants}
         initialConstraints={initialConstraints}
+      />
+      <ProductMetadataDialog
+        open={params.action === "view-metadata" && !!product}
+        onClose={closeModal}
+        product={product}
       />
       <ActionDialog
         open={params.action === "remove"}
