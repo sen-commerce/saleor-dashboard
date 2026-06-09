@@ -245,6 +245,13 @@ export function useMenuStructure() {
     {
       children: [
         {
+          label: intl.formatMessage({ id: "tv5FG3", defaultMessage: "Blog" }),
+          id: "blog",
+          url: "/blog",
+          permissions: [PermissionEnum.MANAGE_PAGES],
+          type: "item",
+        },
+        {
           label: intl.formatMessage(sectionNames.models),
           id: "models",
           url: pageListPath,

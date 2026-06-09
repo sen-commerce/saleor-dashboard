@@ -69,6 +69,7 @@ const ExtensionsSection = lazy(() =>
   import("./extensions").then(m => ({ default: m.ExtensionsSection })),
 );
 const GiftCardSection = lazy(() => import("./giftCards"));
+const BlogSection = lazy(() => import("./blog"));
 const PageSection = lazy(() => import("./modeling"));
 const PageTypesSection = lazy(() => import("./modelTypes"));
 const OrdersSection = lazy(() => import("./orders"));
@@ -235,6 +236,11 @@ const Routes = () => {
                     permissions={[PermissionEnum.MANAGE_DISCOUNTS]}
                     path="/discounts"
                     component={DiscountSection}
+                  />
+                  <SectionRoute
+                    permissions={[PermissionEnum.MANAGE_PAGES]}
+                    path="/blog"
+                    component={BlogSection}
                   />
                   <SectionRoute
                     permissions={[PermissionEnum.MANAGE_PAGES]}

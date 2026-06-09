@@ -4437,6 +4437,418 @@ export function useUserDetailsLazyQuery(baseOptions?: ApolloReactHooks.LazyQuery
 export type UserDetailsQueryHookResult = ReturnType<typeof useUserDetailsQuery>;
 export type UserDetailsLazyQueryHookResult = ReturnType<typeof useUserDetailsLazyQuery>;
 export type UserDetailsQueryResult = Apollo.QueryResult<Types.UserDetailsQuery, Types.UserDetailsQueryVariables>;
+export const BlogPostCreateDocument = gql`
+    mutation BlogPostCreate($input: BlogPostInput!) {
+  blogPostCreate(input: $input) {
+    blogPost {
+      id
+      title
+      slug
+    }
+    errors {
+      field
+      message
+      code
+    }
+  }
+}
+    `;
+export type BlogPostCreateMutationFn = Apollo.MutationFunction<Types.BlogPostCreateMutation, Types.BlogPostCreateMutationVariables>;
+
+/**
+ * __useBlogPostCreateMutation__
+ *
+ * To run a mutation, you first call `useBlogPostCreateMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useBlogPostCreateMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [blogPostCreateMutation, { data, loading, error }] = useBlogPostCreateMutation({
+ *   variables: {
+ *      input: // value for 'input'
+ *   },
+ * });
+ */
+export function useBlogPostCreateMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<Types.BlogPostCreateMutation, Types.BlogPostCreateMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<Types.BlogPostCreateMutation, Types.BlogPostCreateMutationVariables>(BlogPostCreateDocument, options);
+      }
+export type BlogPostCreateMutationHookResult = ReturnType<typeof useBlogPostCreateMutation>;
+export type BlogPostCreateMutationResult = Apollo.MutationResult<Types.BlogPostCreateMutation>;
+export type BlogPostCreateMutationOptions = Apollo.BaseMutationOptions<Types.BlogPostCreateMutation, Types.BlogPostCreateMutationVariables>;
+export const BlogPostUpdateDocument = gql`
+    mutation BlogPostUpdate($id: ID!, $input: BlogPostInput!) {
+  blogPostUpdate(id: $id, input: $input) {
+    blogPost {
+      id
+      title
+      slug
+    }
+    errors {
+      field
+      message
+      code
+    }
+  }
+}
+    `;
+export type BlogPostUpdateMutationFn = Apollo.MutationFunction<Types.BlogPostUpdateMutation, Types.BlogPostUpdateMutationVariables>;
+
+/**
+ * __useBlogPostUpdateMutation__
+ *
+ * To run a mutation, you first call `useBlogPostUpdateMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useBlogPostUpdateMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [blogPostUpdateMutation, { data, loading, error }] = useBlogPostUpdateMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      input: // value for 'input'
+ *   },
+ * });
+ */
+export function useBlogPostUpdateMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<Types.BlogPostUpdateMutation, Types.BlogPostUpdateMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<Types.BlogPostUpdateMutation, Types.BlogPostUpdateMutationVariables>(BlogPostUpdateDocument, options);
+      }
+export type BlogPostUpdateMutationHookResult = ReturnType<typeof useBlogPostUpdateMutation>;
+export type BlogPostUpdateMutationResult = Apollo.MutationResult<Types.BlogPostUpdateMutation>;
+export type BlogPostUpdateMutationOptions = Apollo.BaseMutationOptions<Types.BlogPostUpdateMutation, Types.BlogPostUpdateMutationVariables>;
+export const BlogPostDeleteDocument = gql`
+    mutation BlogPostDelete($id: ID!) {
+  blogPostDelete(id: $id) {
+    blogPost {
+      id
+      title
+    }
+    errors {
+      field
+      message
+      code
+    }
+  }
+}
+    `;
+export type BlogPostDeleteMutationFn = Apollo.MutationFunction<Types.BlogPostDeleteMutation, Types.BlogPostDeleteMutationVariables>;
+
+/**
+ * __useBlogPostDeleteMutation__
+ *
+ * To run a mutation, you first call `useBlogPostDeleteMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useBlogPostDeleteMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [blogPostDeleteMutation, { data, loading, error }] = useBlogPostDeleteMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useBlogPostDeleteMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<Types.BlogPostDeleteMutation, Types.BlogPostDeleteMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<Types.BlogPostDeleteMutation, Types.BlogPostDeleteMutationVariables>(BlogPostDeleteDocument, options);
+      }
+export type BlogPostDeleteMutationHookResult = ReturnType<typeof useBlogPostDeleteMutation>;
+export type BlogPostDeleteMutationResult = Apollo.MutationResult<Types.BlogPostDeleteMutation>;
+export type BlogPostDeleteMutationOptions = Apollo.BaseMutationOptions<Types.BlogPostDeleteMutation, Types.BlogPostDeleteMutationVariables>;
+export const BlogCategoryCreateDocument = gql`
+    mutation BlogCategoryCreate($input: BlogCategoryInput!) {
+  blogCategoryCreate(input: $input) {
+    blogCategory {
+      id
+      name
+      slug
+    }
+    errors {
+      field
+      message
+      code
+    }
+  }
+}
+    `;
+export type BlogCategoryCreateMutationFn = Apollo.MutationFunction<Types.BlogCategoryCreateMutation, Types.BlogCategoryCreateMutationVariables>;
+
+/**
+ * __useBlogCategoryCreateMutation__
+ *
+ * To run a mutation, you first call `useBlogCategoryCreateMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useBlogCategoryCreateMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [blogCategoryCreateMutation, { data, loading, error }] = useBlogCategoryCreateMutation({
+ *   variables: {
+ *      input: // value for 'input'
+ *   },
+ * });
+ */
+export function useBlogCategoryCreateMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<Types.BlogCategoryCreateMutation, Types.BlogCategoryCreateMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<Types.BlogCategoryCreateMutation, Types.BlogCategoryCreateMutationVariables>(BlogCategoryCreateDocument, options);
+      }
+export type BlogCategoryCreateMutationHookResult = ReturnType<typeof useBlogCategoryCreateMutation>;
+export type BlogCategoryCreateMutationResult = Apollo.MutationResult<Types.BlogCategoryCreateMutation>;
+export type BlogCategoryCreateMutationOptions = Apollo.BaseMutationOptions<Types.BlogCategoryCreateMutation, Types.BlogCategoryCreateMutationVariables>;
+export const BlogAuthorCreateDocument = gql`
+    mutation BlogAuthorCreate($input: BlogAuthorInput!) {
+  blogAuthorCreate(input: $input) {
+    blogAuthor {
+      id
+      name
+      slug
+    }
+    errors {
+      field
+      message
+      code
+    }
+  }
+}
+    `;
+export type BlogAuthorCreateMutationFn = Apollo.MutationFunction<Types.BlogAuthorCreateMutation, Types.BlogAuthorCreateMutationVariables>;
+
+/**
+ * __useBlogAuthorCreateMutation__
+ *
+ * To run a mutation, you first call `useBlogAuthorCreateMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useBlogAuthorCreateMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [blogAuthorCreateMutation, { data, loading, error }] = useBlogAuthorCreateMutation({
+ *   variables: {
+ *      input: // value for 'input'
+ *   },
+ * });
+ */
+export function useBlogAuthorCreateMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<Types.BlogAuthorCreateMutation, Types.BlogAuthorCreateMutationVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useMutation<Types.BlogAuthorCreateMutation, Types.BlogAuthorCreateMutationVariables>(BlogAuthorCreateDocument, options);
+      }
+export type BlogAuthorCreateMutationHookResult = ReturnType<typeof useBlogAuthorCreateMutation>;
+export type BlogAuthorCreateMutationResult = Apollo.MutationResult<Types.BlogAuthorCreateMutation>;
+export type BlogAuthorCreateMutationOptions = Apollo.BaseMutationOptions<Types.BlogAuthorCreateMutation, Types.BlogAuthorCreateMutationVariables>;
+export const BlogPostListDocument = gql`
+    query BlogPostList($first: Int, $after: String, $last: Int, $before: String) {
+  blogPosts(before: $before, after: $after, first: $first, last: $last) {
+    edges {
+      node {
+        id
+        title
+        slug
+        readingTimeMinutes
+        createdAt
+        isPublished
+        publishedAt
+        author {
+          id
+          name
+        }
+        category {
+          id
+          name
+        }
+      }
+    }
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+      startCursor
+      endCursor
+    }
+  }
+}
+    `;
+
+/**
+ * __useBlogPostListQuery__
+ *
+ * To run a query within a React component, call `useBlogPostListQuery` and pass it any options that fit your needs.
+ * When your component renders, `useBlogPostListQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useBlogPostListQuery({
+ *   variables: {
+ *      first: // value for 'first'
+ *      after: // value for 'after'
+ *      last: // value for 'last'
+ *      before: // value for 'before'
+ *   },
+ * });
+ */
+export function useBlogPostListQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<Types.BlogPostListQuery, Types.BlogPostListQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<Types.BlogPostListQuery, Types.BlogPostListQueryVariables>(BlogPostListDocument, options);
+      }
+export function useBlogPostListLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<Types.BlogPostListQuery, Types.BlogPostListQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<Types.BlogPostListQuery, Types.BlogPostListQueryVariables>(BlogPostListDocument, options);
+        }
+export type BlogPostListQueryHookResult = ReturnType<typeof useBlogPostListQuery>;
+export type BlogPostListLazyQueryHookResult = ReturnType<typeof useBlogPostListLazyQuery>;
+export type BlogPostListQueryResult = Apollo.QueryResult<Types.BlogPostListQuery, Types.BlogPostListQueryVariables>;
+export const BlogPostDetailsDocument = gql`
+    query BlogPostDetails($id: ID!) {
+  blogPost(id: $id) {
+    id
+    title
+    slug
+    content
+    featuredComments
+    featuredImage
+    readingTimeMinutes
+    createdAt
+    updatedAt
+    isPublished
+    publishedAt
+    author {
+      id
+      name
+    }
+    category {
+      id
+      name
+    }
+  }
+}
+    `;
+
+/**
+ * __useBlogPostDetailsQuery__
+ *
+ * To run a query within a React component, call `useBlogPostDetailsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useBlogPostDetailsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useBlogPostDetailsQuery({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useBlogPostDetailsQuery(baseOptions: ApolloReactHooks.QueryHookOptions<Types.BlogPostDetailsQuery, Types.BlogPostDetailsQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<Types.BlogPostDetailsQuery, Types.BlogPostDetailsQueryVariables>(BlogPostDetailsDocument, options);
+      }
+export function useBlogPostDetailsLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<Types.BlogPostDetailsQuery, Types.BlogPostDetailsQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<Types.BlogPostDetailsQuery, Types.BlogPostDetailsQueryVariables>(BlogPostDetailsDocument, options);
+        }
+export type BlogPostDetailsQueryHookResult = ReturnType<typeof useBlogPostDetailsQuery>;
+export type BlogPostDetailsLazyQueryHookResult = ReturnType<typeof useBlogPostDetailsLazyQuery>;
+export type BlogPostDetailsQueryResult = Apollo.QueryResult<Types.BlogPostDetailsQuery, Types.BlogPostDetailsQueryVariables>;
+export const BlogCategoryListDocument = gql`
+    query BlogCategoryList($first: Int, $after: String) {
+  blogCategories(first: $first, after: $after) {
+    edges {
+      node {
+        id
+        name
+        slug
+        description
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useBlogCategoryListQuery__
+ *
+ * To run a query within a React component, call `useBlogCategoryListQuery` and pass it any options that fit your needs.
+ * When your component renders, `useBlogCategoryListQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useBlogCategoryListQuery({
+ *   variables: {
+ *      first: // value for 'first'
+ *      after: // value for 'after'
+ *   },
+ * });
+ */
+export function useBlogCategoryListQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<Types.BlogCategoryListQuery, Types.BlogCategoryListQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<Types.BlogCategoryListQuery, Types.BlogCategoryListQueryVariables>(BlogCategoryListDocument, options);
+      }
+export function useBlogCategoryListLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<Types.BlogCategoryListQuery, Types.BlogCategoryListQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<Types.BlogCategoryListQuery, Types.BlogCategoryListQueryVariables>(BlogCategoryListDocument, options);
+        }
+export type BlogCategoryListQueryHookResult = ReturnType<typeof useBlogCategoryListQuery>;
+export type BlogCategoryListLazyQueryHookResult = ReturnType<typeof useBlogCategoryListLazyQuery>;
+export type BlogCategoryListQueryResult = Apollo.QueryResult<Types.BlogCategoryListQuery, Types.BlogCategoryListQueryVariables>;
+export const BlogAuthorListDocument = gql`
+    query BlogAuthorList($first: Int, $after: String) {
+  blogAuthors(first: $first, after: $after) {
+    edges {
+      node {
+        id
+        name
+        slug
+        bio
+        avatarUrl
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useBlogAuthorListQuery__
+ *
+ * To run a query within a React component, call `useBlogAuthorListQuery` and pass it any options that fit your needs.
+ * When your component renders, `useBlogAuthorListQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useBlogAuthorListQuery({
+ *   variables: {
+ *      first: // value for 'first'
+ *      after: // value for 'after'
+ *   },
+ * });
+ */
+export function useBlogAuthorListQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<Types.BlogAuthorListQuery, Types.BlogAuthorListQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return ApolloReactHooks.useQuery<Types.BlogAuthorListQuery, Types.BlogAuthorListQueryVariables>(BlogAuthorListDocument, options);
+      }
+export function useBlogAuthorListLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<Types.BlogAuthorListQuery, Types.BlogAuthorListQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return ApolloReactHooks.useLazyQuery<Types.BlogAuthorListQuery, Types.BlogAuthorListQueryVariables>(BlogAuthorListDocument, options);
+        }
+export type BlogAuthorListQueryHookResult = ReturnType<typeof useBlogAuthorListQuery>;
+export type BlogAuthorListLazyQueryHookResult = ReturnType<typeof useBlogAuthorListLazyQuery>;
+export type BlogAuthorListQueryResult = Apollo.QueryResult<Types.BlogAuthorListQuery, Types.BlogAuthorListQueryVariables>;
 export const CategoryDeleteDocument = gql`
     mutation CategoryDelete($id: ID!) {
   categoryDelete(id: $id) {

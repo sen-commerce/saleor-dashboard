@@ -1,3 +1,4 @@
+import { useFileUploadMutation } from "@dashboard/graphql";
 import { type LogLevels, type OutputData } from "@editorjs/editorjs";
 import { FormControl, FormHelperText } from "@material-ui/core";
 import { type EditorCore, type Props as ReactEditorJSProps } from "@react-editor-js/core";
@@ -45,6 +46,53 @@ const RichTextEditor = ({
   const [isFocused, setIsFocused] = React.useState(false);
   const [hasValue, setHasValue] = React.useState(false);
   const isTyped = Boolean(hasValue || isFocused);
+
+  const [uploadFile] = useFileUploadMutation({});
+
+  const customTools = React.useMemo(() => {
+    const imageTool = tools.image as any;
+
+    return {
+      ...tools,
+      image: {
+        ...imageTool,
+        config: {
+          ...(imageTool?.config || {}),
+          uploader: {
+            uploadByFile: async (file: File) => {
+              try {
+                const response = await uploadFile({
+                  variables: { file },
+                });
+                const uploadedFile = response.data?.fileUpload?.uploadedFile;
+
+                if (uploadedFile?.url) {
+                  return {
+                    success: 1,
+                    file: {
+                      url: uploadedFile.url,
+                    },
+                  };
+                }
+
+                const errorMsg = response.data?.fileUpload?.errors?.[0]?.message || "Upload failed";
+
+                throw new Error(errorMsg);
+              } catch (error) {
+                console.error("Image upload failed in RichTextEditor:", error);
+
+                return {
+                  success: 0,
+                  message: error instanceof Error ? error.message : "Unknown error",
+                };
+              }
+            },
+          },
+        },
+      },
+    };
+  }, [uploadFile]);
+
   const handleInitialize = React.useCallback((editor: EditorCore) => {
     if (onInitialize) {
       onInitialize(editor);
@@ -96,7 +144,7 @@ const RichTextEditor = ({
         <ReactEditorJS
           // match with the id of holder div
           holder={id}
-          tools={tools}
+          tools={customTools}
           // Log level is undefined at runtime
           logLevel={"ERROR" as LogLevels.ERROR}
           onInitialize={handleInitialize}

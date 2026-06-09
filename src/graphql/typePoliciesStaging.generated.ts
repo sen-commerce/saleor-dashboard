@@ -947,6 +947,148 @@ export type AttributeValueUpdatedFieldPolicy = {
 	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
 	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
+export type BlogAuthorKeySpecifier = ('avatarUrl' | 'bio' | 'id' | 'name' | 'slug' | BlogAuthorKeySpecifier)[];
+export type BlogAuthorFieldPolicy = {
+	avatarUrl?: FieldPolicy<any> | FieldReadFunction<any>,
+	bio?: FieldPolicy<any> | FieldReadFunction<any>,
+	id?: FieldPolicy<any> | FieldReadFunction<any>,
+	name?: FieldPolicy<any> | FieldReadFunction<any>,
+	slug?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogAuthorCountableConnectionKeySpecifier = ('edges' | 'pageInfo' | 'totalCount' | BlogAuthorCountableConnectionKeySpecifier)[];
+export type BlogAuthorCountableConnectionFieldPolicy = {
+	edges?: FieldPolicy<any> | FieldReadFunction<any>,
+	pageInfo?: FieldPolicy<any> | FieldReadFunction<any>,
+	totalCount?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogAuthorCountableEdgeKeySpecifier = ('cursor' | 'node' | BlogAuthorCountableEdgeKeySpecifier)[];
+export type BlogAuthorCountableEdgeFieldPolicy = {
+	cursor?: FieldPolicy<any> | FieldReadFunction<any>,
+	node?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogAuthorCreateKeySpecifier = ('blogAuthor' | 'blogErrors' | 'errors' | BlogAuthorCreateKeySpecifier)[];
+export type BlogAuthorCreateFieldPolicy = {
+	blogAuthor?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogErrors?: FieldPolicy<any> | FieldReadFunction<any>,
+	errors?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogAuthorDeleteKeySpecifier = ('blogAuthor' | 'blogErrors' | 'errors' | BlogAuthorDeleteKeySpecifier)[];
+export type BlogAuthorDeleteFieldPolicy = {
+	blogAuthor?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogErrors?: FieldPolicy<any> | FieldReadFunction<any>,
+	errors?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogAuthorUpdateKeySpecifier = ('blogAuthor' | 'blogErrors' | 'errors' | BlogAuthorUpdateKeySpecifier)[];
+export type BlogAuthorUpdateFieldPolicy = {
+	blogAuthor?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogErrors?: FieldPolicy<any> | FieldReadFunction<any>,
+	errors?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogCategoryKeySpecifier = ('description' | 'id' | 'metadata' | 'metafield' | 'metafields' | 'name' | 'privateMetadata' | 'privateMetafield' | 'privateMetafields' | 'slug' | BlogCategoryKeySpecifier)[];
+export type BlogCategoryFieldPolicy = {
+	description?: FieldPolicy<any> | FieldReadFunction<any>,
+	id?: FieldPolicy<any> | FieldReadFunction<any>,
+	metadata?: FieldPolicy<any> | FieldReadFunction<any>,
+	metafield?: FieldPolicy<any> | FieldReadFunction<any>,
+	metafields?: FieldPolicy<any> | FieldReadFunction<any>,
+	name?: FieldPolicy<any> | FieldReadFunction<any>,
+	privateMetadata?: FieldPolicy<any> | FieldReadFunction<any>,
+	privateMetafield?: FieldPolicy<any> | FieldReadFunction<any>,
+	privateMetafields?: FieldPolicy<any> | FieldReadFunction<any>,
+	slug?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogCategoryCountableConnectionKeySpecifier = ('edges' | 'pageInfo' | 'totalCount' | BlogCategoryCountableConnectionKeySpecifier)[];
+export type BlogCategoryCountableConnectionFieldPolicy = {
+	edges?: FieldPolicy<any> | FieldReadFunction<any>,
+	pageInfo?: FieldPolicy<any> | FieldReadFunction<any>,
+	totalCount?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogCategoryCountableEdgeKeySpecifier = ('cursor' | 'node' | BlogCategoryCountableEdgeKeySpecifier)[];
+export type BlogCategoryCountableEdgeFieldPolicy = {
+	cursor?: FieldPolicy<any> | FieldReadFunction<any>,
+	node?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogCategoryCreateKeySpecifier = ('blogCategory' | 'blogErrors' | 'errors' | BlogCategoryCreateKeySpecifier)[];
+export type BlogCategoryCreateFieldPolicy = {
+	blogCategory?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogErrors?: FieldPolicy<any> | FieldReadFunction<any>,
+	errors?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogCategoryDeleteKeySpecifier = ('blogCategory' | 'blogErrors' | 'errors' | BlogCategoryDeleteKeySpecifier)[];
+export type BlogCategoryDeleteFieldPolicy = {
+	blogCategory?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogErrors?: FieldPolicy<any> | FieldReadFunction<any>,
+	errors?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogCategoryUpdateKeySpecifier = ('blogCategory' | 'blogErrors' | 'errors' | BlogCategoryUpdateKeySpecifier)[];
+export type BlogCategoryUpdateFieldPolicy = {
+	blogCategory?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogErrors?: FieldPolicy<any> | FieldReadFunction<any>,
+	errors?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogErrorKeySpecifier = ('code' | 'field' | 'message' | BlogErrorKeySpecifier)[];
+export type BlogErrorFieldPolicy = {
+	code?: FieldPolicy<any> | FieldReadFunction<any>,
+	field?: FieldPolicy<any> | FieldReadFunction<any>,
+	message?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogPostKeySpecifier = ('author' | 'category' | 'content' | 'createdAt' | 'featuredComments' | 'featuredImage' | 'id' | 'isPublished' | 'metadata' | 'metafield' | 'metafields' | 'privateMetadata' | 'privateMetafield' | 'privateMetafields' | 'publishedAt' | 'readingTimeMinutes' | 'slug' | 'title' | 'updatedAt' | BlogPostKeySpecifier)[];
+export type BlogPostFieldPolicy = {
+	author?: FieldPolicy<any> | FieldReadFunction<any>,
+	category?: FieldPolicy<any> | FieldReadFunction<any>,
+	content?: FieldPolicy<any> | FieldReadFunction<any>,
+	createdAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	featuredComments?: FieldPolicy<any> | FieldReadFunction<any>,
+	featuredImage?: FieldPolicy<any> | FieldReadFunction<any>,
+	id?: FieldPolicy<any> | FieldReadFunction<any>,
+	isPublished?: FieldPolicy<any> | FieldReadFunction<any>,
+	metadata?: FieldPolicy<any> | FieldReadFunction<any>,
+	metafield?: FieldPolicy<any> | FieldReadFunction<any>,
+	metafields?: FieldPolicy<any> | FieldReadFunction<any>,
+	privateMetadata?: FieldPolicy<any> | FieldReadFunction<any>,
+	privateMetafield?: FieldPolicy<any> | FieldReadFunction<any>,
+	privateMetafields?: FieldPolicy<any> | FieldReadFunction<any>,
+	publishedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	readingTimeMinutes?: FieldPolicy<any> | FieldReadFunction<any>,
+	slug?: FieldPolicy<any> | FieldReadFunction<any>,
+	title?: FieldPolicy<any> | FieldReadFunction<any>,
+	updatedAt?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogPostChannelListingUpdateKeySpecifier = ('blogErrors' | 'blogPost' | 'errors' | BlogPostChannelListingUpdateKeySpecifier)[];
+export type BlogPostChannelListingUpdateFieldPolicy = {
+	blogErrors?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogPost?: FieldPolicy<any> | FieldReadFunction<any>,
+	errors?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogPostCountableConnectionKeySpecifier = ('edges' | 'pageInfo' | 'totalCount' | BlogPostCountableConnectionKeySpecifier)[];
+export type BlogPostCountableConnectionFieldPolicy = {
+	edges?: FieldPolicy<any> | FieldReadFunction<any>,
+	pageInfo?: FieldPolicy<any> | FieldReadFunction<any>,
+	totalCount?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogPostCountableEdgeKeySpecifier = ('cursor' | 'node' | BlogPostCountableEdgeKeySpecifier)[];
+export type BlogPostCountableEdgeFieldPolicy = {
+	cursor?: FieldPolicy<any> | FieldReadFunction<any>,
+	node?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogPostCreateKeySpecifier = ('blogErrors' | 'blogPost' | 'errors' | BlogPostCreateKeySpecifier)[];
+export type BlogPostCreateFieldPolicy = {
+	blogErrors?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogPost?: FieldPolicy<any> | FieldReadFunction<any>,
+	errors?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogPostDeleteKeySpecifier = ('blogErrors' | 'blogPost' | 'errors' | BlogPostDeleteKeySpecifier)[];
+export type BlogPostDeleteFieldPolicy = {
+	blogErrors?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogPost?: FieldPolicy<any> | FieldReadFunction<any>,
+	errors?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type BlogPostUpdateKeySpecifier = ('blogErrors' | 'blogPost' | 'errors' | BlogPostUpdateKeySpecifier)[];
+export type BlogPostUpdateFieldPolicy = {
+	blogErrors?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogPost?: FieldPolicy<any> | FieldReadFunction<any>,
+	errors?: FieldPolicy<any> | FieldReadFunction<any>
+};
 export type BulkProductErrorKeySpecifier = ('attributes' | 'channels' | 'code' | 'field' | 'index' | 'message' | 'values' | 'warehouses' | BulkProductErrorKeySpecifier)[];
 export type BulkProductErrorFieldPolicy = {
 	attributes?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -2828,7 +2970,7 @@ export type MoneyRangeFieldPolicy = {
 	start?: FieldPolicy<any> | FieldReadFunction<any>,
 	stop?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type MutationKeySpecifier = ('accountAddressCreate' | 'accountAddressDelete' | 'accountAddressUpdate' | 'accountDelete' | 'accountRegister' | 'accountRequestDeletion' | 'accountSetDefaultAddress' | 'accountUpdate' | 'addressCreate' | 'addressDelete' | 'addressSetDefault' | 'addressUpdate' | 'appActivate' | 'appCreate' | 'appDeactivate' | 'appDelete' | 'appDeleteFailedInstallation' | 'appFetchManifest' | 'appInstall' | 'appProblemCreate' | 'appProblemDismiss' | 'appReenableSyncWebhooks' | 'appRetryInstall' | 'appTokenCreate' | 'appTokenDelete' | 'appTokenVerify' | 'appUpdate' | 'assignNavigation' | 'assignWarehouseShippingZone' | 'attributeBulkCreate' | 'attributeBulkDelete' | 'attributeBulkTranslate' | 'attributeBulkUpdate' | 'attributeCreate' | 'attributeDelete' | 'attributeReorderValues' | 'attributeTranslate' | 'attributeUpdate' | 'attributeValueBulkDelete' | 'attributeValueBulkTranslate' | 'attributeValueCreate' | 'attributeValueDelete' | 'attributeValueTranslate' | 'attributeValueUpdate' | 'categoryBulkDelete' | 'categoryCreate' | 'categoryDelete' | 'categoryTranslate' | 'categoryUpdate' | 'channelActivate' | 'channelCreate' | 'channelDeactivate' | 'channelDelete' | 'channelReorderWarehouses' | 'channelUpdate' | 'checkoutAddPromoCode' | 'checkoutBillingAddressUpdate' | 'checkoutComplete' | 'checkoutCreate' | 'checkoutCreateFromOrder' | 'checkoutCustomerAttach' | 'checkoutCustomerDetach' | 'checkoutCustomerNoteUpdate' | 'checkoutDelete' | 'checkoutDeliveryMethodUpdate' | 'checkoutEmailUpdate' | 'checkoutLanguageCodeUpdate' | 'checkoutLineDelete' | 'checkoutLinesAdd' | 'checkoutLinesDelete' | 'checkoutLinesUpdate' | 'checkoutPaymentCreate' | 'checkoutRemovePromoCode' | 'checkoutShippingAddressUpdate' | 'checkoutShippingMethodUpdate' | 'collectionAddProducts' | 'collectionBulkDelete' | 'collectionChannelListingUpdate' | 'collectionCreate' | 'collectionDelete' | 'collectionRemoveProducts' | 'collectionReorderProducts' | 'collectionTranslate' | 'collectionUpdate' | 'confirmAccount' | 'confirmEmailChange' | 'createWarehouse' | 'customerBulkDelete' | 'customerBulkUpdate' | 'customerCreate' | 'customerDelete' | 'customerUpdate' | 'deleteMetadata' | 'deletePrivateMetadata' | 'deleteWarehouse' | 'deliveryOptionsCalculate' | 'draftOrderBulkDelete' | 'draftOrderComplete' | 'draftOrderCreate' | 'draftOrderDelete' | 'draftOrderLinesBulkDelete' | 'draftOrderUpdate' | 'eventDeliveryRetry' | 'exportGiftCards' | 'exportProducts' | 'exportVoucherCodes' | 'externalAuthenticationUrl' | 'externalLogout' | 'externalNotificationTrigger' | 'externalObtainAccessTokens' | 'externalRefresh' | 'externalVerify' | 'fileUpload' | 'giftCardActivate' | 'giftCardAddNote' | 'giftCardBulkActivate' | 'giftCardBulkCreate' | 'giftCardBulkDeactivate' | 'giftCardBulkDelete' | 'giftCardCreate' | 'giftCardDeactivate' | 'giftCardDelete' | 'giftCardResend' | 'giftCardSettingsUpdate' | 'giftCardUpdate' | 'invoiceCreate' | 'invoiceDelete' | 'invoiceRequest' | 'invoiceRequestDelete' | 'invoiceSendNotification' | 'invoiceUpdate' | 'menuBulkDelete' | 'menuCreate' | 'menuDelete' | 'menuItemBulkDelete' | 'menuItemCreate' | 'menuItemDelete' | 'menuItemMove' | 'menuItemTranslate' | 'menuItemUpdate' | 'menuUpdate' | 'orderAddNote' | 'orderBulkCancel' | 'orderBulkCreate' | 'orderCancel' | 'orderCapture' | 'orderConfirm' | 'orderCreateFromCheckout' | 'orderDiscountAdd' | 'orderDiscountDelete' | 'orderDiscountUpdate' | 'orderFulfill' | 'orderFulfillmentApprove' | 'orderFulfillmentCancel' | 'orderFulfillmentRefundProducts' | 'orderFulfillmentReturnProducts' | 'orderFulfillmentUpdateTracking' | 'orderGrantRefundCreate' | 'orderGrantRefundUpdate' | 'orderLineDelete' | 'orderLineDiscountRemove' | 'orderLineDiscountUpdate' | 'orderLineUpdate' | 'orderLinesCreate' | 'orderMarkAsPaid' | 'orderNoteAdd' | 'orderNoteUpdate' | 'orderRefund' | 'orderSettingsUpdate' | 'orderUpdate' | 'orderUpdateShipping' | 'orderVoid' | 'pageAttributeAssign' | 'pageAttributeUnassign' | 'pageBulkDelete' | 'pageBulkPublish' | 'pageCreate' | 'pageDelete' | 'pageReorderAttributeValues' | 'pageTranslate' | 'pageTypeBulkDelete' | 'pageTypeCreate' | 'pageTypeDelete' | 'pageTypeReorderAttributes' | 'pageTypeUpdate' | 'pageUpdate' | 'passwordChange' | 'paymentCapture' | 'paymentCheckBalance' | 'paymentGatewayInitialize' | 'paymentGatewayInitializeTokenization' | 'paymentInitialize' | 'paymentMethodInitializeTokenization' | 'paymentMethodProcessTokenization' | 'paymentRefund' | 'paymentVoid' | 'permissionGroupCreate' | 'permissionGroupDelete' | 'permissionGroupUpdate' | 'pluginUpdate' | 'productAttributeAssign' | 'productAttributeAssignmentUpdate' | 'productAttributeUnassign' | 'productBulkCreate' | 'productBulkDelete' | 'productBulkTranslate' | 'productChannelListingUpdate' | 'productCreate' | 'productDelete' | 'productMediaBulkDelete' | 'productMediaCreate' | 'productMediaDelete' | 'productMediaReorder' | 'productMediaUpdate' | 'productReorderAttributeValues' | 'productTranslate' | 'productTypeBulkDelete' | 'productTypeCreate' | 'productTypeDelete' | 'productTypeReorderAttributes' | 'productTypeUpdate' | 'productUpdate' | 'productVariantBulkCreate' | 'productVariantBulkDelete' | 'productVariantBulkTranslate' | 'productVariantBulkUpdate' | 'productVariantChannelListingUpdate' | 'productVariantCreate' | 'productVariantDelete' | 'productVariantPreorderDeactivate' | 'productVariantReorder' | 'productVariantReorderAttributeValues' | 'productVariantSetDefault' | 'productVariantStocksCreate' | 'productVariantStocksDelete' | 'productVariantStocksUpdate' | 'productVariantTranslate' | 'productVariantUpdate' | 'promotionBulkDelete' | 'promotionCreate' | 'promotionDelete' | 'promotionRuleCreate' | 'promotionRuleDelete' | 'promotionRuleTranslate' | 'promotionRuleUpdate' | 'promotionTranslate' | 'promotionUpdate' | 'refundReasonReferenceClear' | 'refundSettingsUpdate' | 'requestEmailChange' | 'requestPasswordReset' | 'saleBulkDelete' | 'saleCataloguesAdd' | 'saleCataloguesRemove' | 'saleChannelListingUpdate' | 'saleCreate' | 'saleDelete' | 'saleTranslate' | 'saleUpdate' | 'sendConfirmationEmail' | 'setPassword' | 'shippingMethodChannelListingUpdate' | 'shippingPriceBulkDelete' | 'shippingPriceCreate' | 'shippingPriceDelete' | 'shippingPriceExcludeProducts' | 'shippingPriceRemoveProductFromExclude' | 'shippingPriceTranslate' | 'shippingPriceUpdate' | 'shippingZoneBulkDelete' | 'shippingZoneCreate' | 'shippingZoneDelete' | 'shippingZoneUpdate' | 'shopAddressUpdate' | 'shopDomainUpdate' | 'shopFetchTaxRates' | 'shopSettingsTranslate' | 'shopSettingsUpdate' | 'staffBulkDelete' | 'staffCreate' | 'staffDelete' | 'staffNotificationRecipientCreate' | 'staffNotificationRecipientDelete' | 'staffNotificationRecipientUpdate' | 'staffUpdate' | 'stockBulkUpdate' | 'storedPaymentMethodRequestDelete' | 'taxClassCreate' | 'taxClassDelete' | 'taxClassUpdate' | 'taxConfigurationUpdate' | 'taxCountryConfigurationDelete' | 'taxCountryConfigurationUpdate' | 'taxExemptionManage' | 'tokenCreate' | 'tokenRefresh' | 'tokenVerify' | 'tokensDeactivateAll' | 'transactionCreate' | 'transactionEventReport' | 'transactionInitialize' | 'transactionProcess' | 'transactionRequestAction' | 'transactionRequestRefundForGrantedRefund' | 'transactionUpdate' | 'unassignWarehouseShippingZone' | 'updateMetadata' | 'updatePrivateMetadata' | 'updateWarehouse' | 'userAvatarDelete' | 'userAvatarUpdate' | 'userBulkSetActive' | 'variantMediaAssign' | 'variantMediaUnassign' | 'voucherBulkDelete' | 'voucherCataloguesAdd' | 'voucherCataloguesRemove' | 'voucherChannelListingUpdate' | 'voucherCodeBulkDelete' | 'voucherCreate' | 'voucherDelete' | 'voucherTranslate' | 'voucherUpdate' | 'webhookCreate' | 'webhookDelete' | 'webhookDryRun' | 'webhookTrigger' | 'webhookUpdate' | MutationKeySpecifier)[];
+export type MutationKeySpecifier = ('accountAddressCreate' | 'accountAddressDelete' | 'accountAddressUpdate' | 'accountDelete' | 'accountRegister' | 'accountRequestDeletion' | 'accountSetDefaultAddress' | 'accountUpdate' | 'addressCreate' | 'addressDelete' | 'addressSetDefault' | 'addressUpdate' | 'appActivate' | 'appCreate' | 'appDeactivate' | 'appDelete' | 'appDeleteFailedInstallation' | 'appFetchManifest' | 'appInstall' | 'appProblemCreate' | 'appProblemDismiss' | 'appReenableSyncWebhooks' | 'appRetryInstall' | 'appTokenCreate' | 'appTokenDelete' | 'appTokenVerify' | 'appUpdate' | 'assignNavigation' | 'assignWarehouseShippingZone' | 'attributeBulkCreate' | 'attributeBulkDelete' | 'attributeBulkTranslate' | 'attributeBulkUpdate' | 'attributeCreate' | 'attributeDelete' | 'attributeReorderValues' | 'attributeTranslate' | 'attributeUpdate' | 'attributeValueBulkDelete' | 'attributeValueBulkTranslate' | 'attributeValueCreate' | 'attributeValueDelete' | 'attributeValueTranslate' | 'attributeValueUpdate' | 'blogAuthorCreate' | 'blogAuthorDelete' | 'blogAuthorUpdate' | 'blogCategoryCreate' | 'blogCategoryDelete' | 'blogCategoryUpdate' | 'blogPostChannelListingUpdate' | 'blogPostCreate' | 'blogPostDelete' | 'blogPostUpdate' | 'categoryBulkDelete' | 'categoryCreate' | 'categoryDelete' | 'categoryTranslate' | 'categoryUpdate' | 'channelActivate' | 'channelCreate' | 'channelDeactivate' | 'channelDelete' | 'channelReorderWarehouses' | 'channelUpdate' | 'checkoutAddPromoCode' | 'checkoutBillingAddressUpdate' | 'checkoutComplete' | 'checkoutCreate' | 'checkoutCreateFromOrder' | 'checkoutCustomerAttach' | 'checkoutCustomerDetach' | 'checkoutCustomerNoteUpdate' | 'checkoutDelete' | 'checkoutDeliveryMethodUpdate' | 'checkoutEmailUpdate' | 'checkoutLanguageCodeUpdate' | 'checkoutLineDelete' | 'checkoutLinesAdd' | 'checkoutLinesDelete' | 'checkoutLinesUpdate' | 'checkoutPaymentCreate' | 'checkoutRemovePromoCode' | 'checkoutShippingAddressUpdate' | 'checkoutShippingMethodUpdate' | 'collectionAddProducts' | 'collectionBulkDelete' | 'collectionChannelListingUpdate' | 'collectionCreate' | 'collectionDelete' | 'collectionRemoveProducts' | 'collectionReorderProducts' | 'collectionTranslate' | 'collectionUpdate' | 'confirmAccount' | 'confirmEmailChange' | 'createWarehouse' | 'customerBulkDelete' | 'customerBulkUpdate' | 'customerCreate' | 'customerDelete' | 'customerUpdate' | 'deleteMetadata' | 'deletePrivateMetadata' | 'deleteWarehouse' | 'deliveryOptionsCalculate' | 'draftOrderBulkDelete' | 'draftOrderComplete' | 'draftOrderCreate' | 'draftOrderDelete' | 'draftOrderLinesBulkDelete' | 'draftOrderUpdate' | 'eventDeliveryRetry' | 'exportGiftCards' | 'exportProducts' | 'exportVoucherCodes' | 'externalAuthenticationUrl' | 'externalLogout' | 'externalNotificationTrigger' | 'externalObtainAccessTokens' | 'externalRefresh' | 'externalVerify' | 'fileUpload' | 'giftCardActivate' | 'giftCardAddNote' | 'giftCardBulkActivate' | 'giftCardBulkCreate' | 'giftCardBulkDeactivate' | 'giftCardBulkDelete' | 'giftCardCreate' | 'giftCardDeactivate' | 'giftCardDelete' | 'giftCardResend' | 'giftCardSettingsUpdate' | 'giftCardUpdate' | 'invoiceCreate' | 'invoiceDelete' | 'invoiceRequest' | 'invoiceRequestDelete' | 'invoiceSendNotification' | 'invoiceUpdate' | 'menuBulkDelete' | 'menuCreate' | 'menuDelete' | 'menuItemBulkDelete' | 'menuItemCreate' | 'menuItemDelete' | 'menuItemMove' | 'menuItemTranslate' | 'menuItemUpdate' | 'menuUpdate' | 'orderAddNote' | 'orderBulkCancel' | 'orderBulkCreate' | 'orderCancel' | 'orderCapture' | 'orderConfirm' | 'orderCreateFromCheckout' | 'orderDiscountAdd' | 'orderDiscountDelete' | 'orderDiscountUpdate' | 'orderFulfill' | 'orderFulfillmentApprove' | 'orderFulfillmentCancel' | 'orderFulfillmentRefundProducts' | 'orderFulfillmentReturnProducts' | 'orderFulfillmentUpdateTracking' | 'orderGrantRefundCreate' | 'orderGrantRefundUpdate' | 'orderLineDelete' | 'orderLineDiscountRemove' | 'orderLineDiscountUpdate' | 'orderLineUpdate' | 'orderLinesCreate' | 'orderMarkAsPaid' | 'orderNoteAdd' | 'orderNoteUpdate' | 'orderRefund' | 'orderSettingsUpdate' | 'orderUpdate' | 'orderUpdateShipping' | 'orderVoid' | 'pageAttributeAssign' | 'pageAttributeUnassign' | 'pageBulkDelete' | 'pageBulkPublish' | 'pageCreate' | 'pageDelete' | 'pageReorderAttributeValues' | 'pageTranslate' | 'pageTypeBulkDelete' | 'pageTypeCreate' | 'pageTypeDelete' | 'pageTypeReorderAttributes' | 'pageTypeUpdate' | 'pageUpdate' | 'passwordChange' | 'paymentCapture' | 'paymentCheckBalance' | 'paymentGatewayInitialize' | 'paymentGatewayInitializeTokenization' | 'paymentInitialize' | 'paymentMethodInitializeTokenization' | 'paymentMethodProcessTokenization' | 'paymentRefund' | 'paymentVoid' | 'permissionGroupCreate' | 'permissionGroupDelete' | 'permissionGroupUpdate' | 'pluginUpdate' | 'productAttributeAssign' | 'productAttributeAssignmentUpdate' | 'productAttributeUnassign' | 'productBulkCreate' | 'productBulkDelete' | 'productBulkTranslate' | 'productChannelListingUpdate' | 'productCreate' | 'productDelete' | 'productMediaBulkDelete' | 'productMediaCreate' | 'productMediaDelete' | 'productMediaReorder' | 'productMediaUpdate' | 'productReorderAttributeValues' | 'productTranslate' | 'productTypeBulkDelete' | 'productTypeCreate' | 'productTypeDelete' | 'productTypeReorderAttributes' | 'productTypeUpdate' | 'productUpdate' | 'productVariantBulkCreate' | 'productVariantBulkDelete' | 'productVariantBulkTranslate' | 'productVariantBulkUpdate' | 'productVariantChannelListingUpdate' | 'productVariantCreate' | 'productVariantDelete' | 'productVariantPreorderDeactivate' | 'productVariantReorder' | 'productVariantReorderAttributeValues' | 'productVariantSetDefault' | 'productVariantStocksCreate' | 'productVariantStocksDelete' | 'productVariantStocksUpdate' | 'productVariantTranslate' | 'productVariantUpdate' | 'promotionBulkDelete' | 'promotionCreate' | 'promotionDelete' | 'promotionRuleCreate' | 'promotionRuleDelete' | 'promotionRuleTranslate' | 'promotionRuleUpdate' | 'promotionTranslate' | 'promotionUpdate' | 'refundReasonReferenceClear' | 'refundSettingsUpdate' | 'requestEmailChange' | 'requestPasswordReset' | 'saleBulkDelete' | 'saleCataloguesAdd' | 'saleCataloguesRemove' | 'saleChannelListingUpdate' | 'saleCreate' | 'saleDelete' | 'saleTranslate' | 'saleUpdate' | 'sendConfirmationEmail' | 'setPassword' | 'shippingMethodChannelListingUpdate' | 'shippingPriceBulkDelete' | 'shippingPriceCreate' | 'shippingPriceDelete' | 'shippingPriceExcludeProducts' | 'shippingPriceRemoveProductFromExclude' | 'shippingPriceTranslate' | 'shippingPriceUpdate' | 'shippingZoneBulkDelete' | 'shippingZoneCreate' | 'shippingZoneDelete' | 'shippingZoneUpdate' | 'shopAddressUpdate' | 'shopDomainUpdate' | 'shopFetchTaxRates' | 'shopSettingsTranslate' | 'shopSettingsUpdate' | 'staffBulkDelete' | 'staffCreate' | 'staffDelete' | 'staffNotificationRecipientCreate' | 'staffNotificationRecipientDelete' | 'staffNotificationRecipientUpdate' | 'staffUpdate' | 'stockBulkUpdate' | 'storedPaymentMethodRequestDelete' | 'taxClassCreate' | 'taxClassDelete' | 'taxClassUpdate' | 'taxConfigurationUpdate' | 'taxCountryConfigurationDelete' | 'taxCountryConfigurationUpdate' | 'taxExemptionManage' | 'tokenCreate' | 'tokenRefresh' | 'tokenVerify' | 'tokensDeactivateAll' | 'transactionCreate' | 'transactionEventReport' | 'transactionInitialize' | 'transactionProcess' | 'transactionRequestAction' | 'transactionRequestRefundForGrantedRefund' | 'transactionUpdate' | 'unassignWarehouseShippingZone' | 'updateMetadata' | 'updatePrivateMetadata' | 'updateWarehouse' | 'userAvatarDelete' | 'userAvatarUpdate' | 'userBulkSetActive' | 'variantMediaAssign' | 'variantMediaUnassign' | 'voucherBulkDelete' | 'voucherCataloguesAdd' | 'voucherCataloguesRemove' | 'voucherChannelListingUpdate' | 'voucherCodeBulkDelete' | 'voucherCreate' | 'voucherDelete' | 'voucherTranslate' | 'voucherUpdate' | 'webhookCreate' | 'webhookDelete' | 'webhookDryRun' | 'webhookTrigger' | 'webhookUpdate' | MutationKeySpecifier)[];
 export type MutationFieldPolicy = {
 	accountAddressCreate?: FieldPolicy<any> | FieldReadFunction<any>,
 	accountAddressDelete?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -2874,6 +3016,16 @@ export type MutationFieldPolicy = {
 	attributeValueDelete?: FieldPolicy<any> | FieldReadFunction<any>,
 	attributeValueTranslate?: FieldPolicy<any> | FieldReadFunction<any>,
 	attributeValueUpdate?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogAuthorCreate?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogAuthorDelete?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogAuthorUpdate?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogCategoryCreate?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogCategoryDelete?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogCategoryUpdate?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogPostChannelListingUpdate?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogPostCreate?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogPostDelete?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogPostUpdate?: FieldPolicy<any> | FieldReadFunction<any>,
 	categoryBulkDelete?: FieldPolicy<any> | FieldReadFunction<any>,
 	categoryCreate?: FieldPolicy<any> | FieldReadFunction<any>,
 	categoryDelete?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -5416,7 +5568,7 @@ export type PromotionUpdatedEventFieldPolicy = {
 	id?: FieldPolicy<any> | FieldReadFunction<any>,
 	type?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type QueryKeySpecifier = ('_entities' | '_service' | 'address' | 'addressValidationRules' | 'app' | 'appExtension' | 'appExtensions' | 'apps' | 'appsInstallations' | 'attribute' | 'attributes' | 'categories' | 'category' | 'channel' | 'channels' | 'checkout' | 'checkoutLines' | 'checkouts' | 'collection' | 'collections' | 'customers' | 'draftOrders' | 'exportFile' | 'exportFiles' | 'giftCard' | 'giftCardCurrencies' | 'giftCardSettings' | 'giftCardTags' | 'giftCards' | 'homepageEvents' | 'me' | 'menu' | 'menuItem' | 'menuItems' | 'menus' | 'order' | 'orderByToken' | 'orderSettings' | 'orders' | 'ordersTotal' | 'page' | 'pageType' | 'pageTypes' | 'pages' | 'payment' | 'payments' | 'permissionGroup' | 'permissionGroups' | 'plugin' | 'plugins' | 'product' | 'productType' | 'productTypes' | 'productVariant' | 'productVariants' | 'products' | 'promotion' | 'promotions' | 'refundSettings' | 'reportProductSales' | 'sale' | 'sales' | 'shippingZone' | 'shippingZones' | 'shop' | 'staffUsers' | 'stock' | 'stocks' | 'taxClass' | 'taxClasses' | 'taxConfiguration' | 'taxConfigurations' | 'taxCountryConfiguration' | 'taxCountryConfigurations' | 'taxTypes' | 'transaction' | 'transactions' | 'translation' | 'translations' | 'user' | 'voucher' | 'vouchers' | 'warehouse' | 'warehouses' | 'webhook' | 'webhookEvents' | 'webhookSamplePayload' | QueryKeySpecifier)[];
+export type QueryKeySpecifier = ('_entities' | '_service' | 'address' | 'addressValidationRules' | 'app' | 'appExtension' | 'appExtensions' | 'apps' | 'appsInstallations' | 'attribute' | 'attributes' | 'blogAuthors' | 'blogCategories' | 'blogPost' | 'blogPosts' | 'categories' | 'category' | 'channel' | 'channels' | 'checkout' | 'checkoutLines' | 'checkouts' | 'collection' | 'collections' | 'customers' | 'draftOrders' | 'exportFile' | 'exportFiles' | 'giftCard' | 'giftCardCurrencies' | 'giftCardSettings' | 'giftCardTags' | 'giftCards' | 'helloWorld' | 'homepageEvents' | 'me' | 'menu' | 'menuItem' | 'menuItems' | 'menus' | 'order' | 'orderByToken' | 'orderSettings' | 'orders' | 'ordersTotal' | 'page' | 'pageType' | 'pageTypes' | 'pages' | 'payment' | 'payments' | 'permissionGroup' | 'permissionGroups' | 'plugin' | 'plugins' | 'product' | 'productType' | 'productTypes' | 'productVariant' | 'productVariants' | 'products' | 'promotion' | 'promotions' | 'refundSettings' | 'reportProductSales' | 'sale' | 'sales' | 'shippingZone' | 'shippingZones' | 'shop' | 'staffUsers' | 'stock' | 'stocks' | 'taxClass' | 'taxClasses' | 'taxConfiguration' | 'taxConfigurations' | 'taxCountryConfiguration' | 'taxCountryConfigurations' | 'taxTypes' | 'transaction' | 'transactions' | 'translation' | 'translations' | 'user' | 'voucher' | 'vouchers' | 'warehouse' | 'warehouses' | 'webhook' | 'webhookEvents' | 'webhookSamplePayload' | QueryKeySpecifier)[];
 export type QueryFieldPolicy = {
 	_entities?: FieldPolicy<any> | FieldReadFunction<any>,
 	_service?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -5429,6 +5581,10 @@ export type QueryFieldPolicy = {
 	appsInstallations?: FieldPolicy<any> | FieldReadFunction<any>,
 	attribute?: FieldPolicy<any> | FieldReadFunction<any>,
 	attributes?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogAuthors?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogCategories?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogPost?: FieldPolicy<any> | FieldReadFunction<any>,
+	blogPosts?: FieldPolicy<any> | FieldReadFunction<any>,
 	categories?: FieldPolicy<any> | FieldReadFunction<any>,
 	category?: FieldPolicy<any> | FieldReadFunction<any>,
 	channel?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -5447,6 +5603,7 @@ export type QueryFieldPolicy = {
 	giftCardSettings?: FieldPolicy<any> | FieldReadFunction<any>,
 	giftCardTags?: FieldPolicy<any> | FieldReadFunction<any>,
 	giftCards?: FieldPolicy<any> | FieldReadFunction<any>,
+	helloWorld?: FieldPolicy<any> | FieldReadFunction<any>,
 	homepageEvents?: FieldPolicy<any> | FieldReadFunction<any>,
 	me?: FieldPolicy<any> | FieldReadFunction<any>,
 	menu?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -7793,6 +7950,86 @@ export type StrictTypedTypePolicies = {
 	AttributeValueUpdated?: Omit<TypePolicy, "fields" | "keyFields"> & {
 		keyFields?: false | AttributeValueUpdatedKeySpecifier | (() => undefined | AttributeValueUpdatedKeySpecifier),
 		fields?: AttributeValueUpdatedFieldPolicy,
+	},
+	BlogAuthor?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogAuthorKeySpecifier | (() => undefined | BlogAuthorKeySpecifier),
+		fields?: BlogAuthorFieldPolicy,
+	},
+	BlogAuthorCountableConnection?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogAuthorCountableConnectionKeySpecifier | (() => undefined | BlogAuthorCountableConnectionKeySpecifier),
+		fields?: BlogAuthorCountableConnectionFieldPolicy,
+	},
+	BlogAuthorCountableEdge?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogAuthorCountableEdgeKeySpecifier | (() => undefined | BlogAuthorCountableEdgeKeySpecifier),
+		fields?: BlogAuthorCountableEdgeFieldPolicy,
+	},
+	BlogAuthorCreate?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogAuthorCreateKeySpecifier | (() => undefined | BlogAuthorCreateKeySpecifier),
+		fields?: BlogAuthorCreateFieldPolicy,
+	},
+	BlogAuthorDelete?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogAuthorDeleteKeySpecifier | (() => undefined | BlogAuthorDeleteKeySpecifier),
+		fields?: BlogAuthorDeleteFieldPolicy,
+	},
+	BlogAuthorUpdate?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogAuthorUpdateKeySpecifier | (() => undefined | BlogAuthorUpdateKeySpecifier),
+		fields?: BlogAuthorUpdateFieldPolicy,
+	},
+	BlogCategory?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogCategoryKeySpecifier | (() => undefined | BlogCategoryKeySpecifier),
+		fields?: BlogCategoryFieldPolicy,
+	},
+	BlogCategoryCountableConnection?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogCategoryCountableConnectionKeySpecifier | (() => undefined | BlogCategoryCountableConnectionKeySpecifier),
+		fields?: BlogCategoryCountableConnectionFieldPolicy,
+	},
+	BlogCategoryCountableEdge?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogCategoryCountableEdgeKeySpecifier | (() => undefined | BlogCategoryCountableEdgeKeySpecifier),
+		fields?: BlogCategoryCountableEdgeFieldPolicy,
+	},
+	BlogCategoryCreate?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogCategoryCreateKeySpecifier | (() => undefined | BlogCategoryCreateKeySpecifier),
+		fields?: BlogCategoryCreateFieldPolicy,
+	},
+	BlogCategoryDelete?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogCategoryDeleteKeySpecifier | (() => undefined | BlogCategoryDeleteKeySpecifier),
+		fields?: BlogCategoryDeleteFieldPolicy,
+	},
+	BlogCategoryUpdate?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogCategoryUpdateKeySpecifier | (() => undefined | BlogCategoryUpdateKeySpecifier),
+		fields?: BlogCategoryUpdateFieldPolicy,
+	},
+	BlogError?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogErrorKeySpecifier | (() => undefined | BlogErrorKeySpecifier),
+		fields?: BlogErrorFieldPolicy,
+	},
+	BlogPost?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogPostKeySpecifier | (() => undefined | BlogPostKeySpecifier),
+		fields?: BlogPostFieldPolicy,
+	},
+	BlogPostChannelListingUpdate?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogPostChannelListingUpdateKeySpecifier | (() => undefined | BlogPostChannelListingUpdateKeySpecifier),
+		fields?: BlogPostChannelListingUpdateFieldPolicy,
+	},
+	BlogPostCountableConnection?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogPostCountableConnectionKeySpecifier | (() => undefined | BlogPostCountableConnectionKeySpecifier),
+		fields?: BlogPostCountableConnectionFieldPolicy,
+	},
+	BlogPostCountableEdge?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogPostCountableEdgeKeySpecifier | (() => undefined | BlogPostCountableEdgeKeySpecifier),
+		fields?: BlogPostCountableEdgeFieldPolicy,
+	},
+	BlogPostCreate?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogPostCreateKeySpecifier | (() => undefined | BlogPostCreateKeySpecifier),
+		fields?: BlogPostCreateFieldPolicy,
+	},
+	BlogPostDelete?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogPostDeleteKeySpecifier | (() => undefined | BlogPostDeleteKeySpecifier),
+		fields?: BlogPostDeleteFieldPolicy,
+	},
+	BlogPostUpdate?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | BlogPostUpdateKeySpecifier | (() => undefined | BlogPostUpdateKeySpecifier),
+		fields?: BlogPostUpdateFieldPolicy,
 	},
 	BulkProductError?: Omit<TypePolicy, "fields" | "keyFields"> & {
 		keyFields?: false | BulkProductErrorKeySpecifier | (() => undefined | BulkProductErrorKeySpecifier),
