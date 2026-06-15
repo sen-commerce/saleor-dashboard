@@ -1,5 +1,45 @@
 # Changelog
 
+## 3.23.8
+
+### Patch Changes
+
+- [#6615](https://github.com/saleor/saleor-dashboard/pull/6615) [`cae12c7`](https://github.com/saleor/saleor-dashboard/commit/cae12c75dc5c49e571de6d2d73f0dde6bda46366) Thanks [@mirekm](https://github.com/mirekm)! - Fixed unconfirmed order details so confirming an order updates the page immediately instead of requiring a manual reload. Removed the unused save bar from confirmed order details, including the empty footer slot.
+
+- [#6597](https://github.com/saleor/saleor-dashboard/pull/6597) [`428224e`](https://github.com/saleor/saleor-dashboard/commit/428224ea0d51b997ed074ad00cc09f93c1f0a4f0) Thanks [@mirekm](https://github.com/mirekm)! - Draft orders now open at `/orders/drafts/{id}` so the Drafts sidebar item stays highlighted. Older `/orders/{id}` links to drafts still work and update the address bar automatically.
+
+- [#6613](https://github.com/saleor/saleor-dashboard/pull/6613) [`0693243`](https://github.com/saleor/saleor-dashboard/commit/069324333a77e9befdfc0c86c9abd62e87bf2d21) Thanks [@lkostrowski](https://github.com/lkostrowski)! - Rich-text description editors now support tables. A new "Table" block is available in the editor toolbar across all rich-text fields (product, category, collection and page descriptions, discount and shipping rate descriptions, rich-text attribute values, and translations). Tables support a toggleable heading row, adding and removing rows and columns, and inline formatting (bold, italic, link, strikethrough) inside cells.
+
+- [#6599](https://github.com/saleor/saleor-dashboard/pull/6599) [`2e9704f`](https://github.com/saleor/saleor-dashboard/commit/2e9704f1d2b2ea3bddf685091e04f7fe97b10e4d) Thanks [@mirekm](https://github.com/mirekm)! - Detail-page app widgets in the sidebar no longer sit in a fixed-height box. Apps report content height via the `widgetResize` App Bridge action (`actions.WidgetResize` in `@saleor/app-sdk` ≥ 1.9.0); the Dashboard resizes the iframe and responds with `ok`. GET widgets use `useAppActions`; POST widgets handle the same action in `useWidgetIframeAutoHeight`. App developers can adopt `useWidgetAutoResize` / `reportWidgetHeightFromElement` ([saleor/app-sdk#507](https://github.com/saleor/app-sdk/pull/507)). Apps that have not adopted this yet keep the previous default height.
+
+  Bumps `@saleor/app-sdk` to `1.9.0`.
+
+## 3.23.7
+
+### Patch Changes
+
+- [#6604](https://github.com/saleor/saleor-dashboard/pull/6604) [`3f7e21d`](https://github.com/saleor/saleor-dashboard/commit/3f7e21db9af16ec2e3acc2ca1d3510d9f3f128d1) Thanks [@lkostrowski](https://github.com/lkostrowski)! - Added a deprecation banner in the sidebar that warns when the connected Saleor instance runs a deprecated version. When the connected version is the same or older than the configured `DEPRECATED_SALEOR_VERSION` (compared on major and minor), a banner appears below the Saleor logo informing users that the instance will be automatically upgraded on the date set in `DEPRECATED_SALEOR_VERSION_TIMESTAMP`. The banner is shown only when both environment variables are set and valid.
+
+- [#6614](https://github.com/saleor/saleor-dashboard/pull/6614) [`6f3d073`](https://github.com/saleor/saleor-dashboard/commit/6f3d073320124b2f15e7bc7ee9b29964ca55d19c) Thanks [@mirekm](https://github.com/mirekm)! - Fixed the rich text editor (e.g. product description) duplicating its content on load and then becoming empty and non-editable. This happened in development due to the editor being initialized twice; it now mounts a single editor instance.
+
+- [#6568](https://github.com/saleor/saleor-dashboard/pull/6568) [`2ae78ff`](https://github.com/saleor/saleor-dashboard/commit/2ae78ff3b0e21bd3e67de9a2d96366c01a1fa23c) Thanks [@lkostrowski](https://github.com/lkostrowski)! - Models list now organizes content by model type using horizontal tabs. The previous filter UI and filter presets on this page were removed — the active tab is the type filter. Each tab shows a count badge (e.g. "5" or "20+" when more than one page is available).
+
+- [#6608](https://github.com/saleor/saleor-dashboard/pull/6608) [`a927321`](https://github.com/saleor/saleor-dashboard/commit/a927321de8e4196ffd31886a7bd4990c374812f6) Thanks [@mirekm](https://github.com/mirekm)! - Product media edit page improvements: breadcrumb title with product name and media type, viewport-sized preview for images and embedded videos, and per-media metadata from a header button (same dialog pattern as product and variant). Metadata dialogs and other buttons using the shared save loader now show the Saleor throbber instead of a generic spinner.
+
+- [#6608](https://github.com/saleor/saleor-dashboard/pull/6608) [`a927321`](https://github.com/saleor/saleor-dashboard/commit/a927321de8e4196ffd31886a7bd4990c374812f6) Thanks [@mirekm](https://github.com/mirekm)! - Improved product image gallery on the product details page:
+  - Minimal drag-and-drop upload area when the gallery is empty, with a clear overlay when adding images to an existing gallery
+  - Gallery order updates immediately after reordering images; a success notification confirms when the new order is saved
+  - Success notification when images finish uploading
+  - Confirmation step before deleting gallery media, with the removed image disappearing from the gallery right away
+
+- [#6596](https://github.com/saleor/saleor-dashboard/pull/6596) [`8de98be`](https://github.com/saleor/saleor-dashboard/commit/8de98be8a6845128935b8c0a7711842e4e75a26a) Thanks [@mirekm](https://github.com/mirekm)! - Product, variant, and draft order detail pages now manage metadata from a header button that opens a dedicated dialog, matching customer and order details. Header action buttons on entity detail pages also use consistent spacing, with hints on the new metadata buttons.
+
+- [#6595](https://github.com/saleor/saleor-dashboard/pull/6595) [`aff6526`](https://github.com/saleor/saleor-dashboard/commit/aff652625d1de13330be70a3291713087505067e) Thanks [@mirekm](https://github.com/mirekm)! - Product type now appears in the product page header, next to the product name. Click the type to open your catalog filtered to products of that type, or use More actions → Product type settings to edit the type itself. The type is no longer repeated in the organization panel on the right.
+
+- [#6584](https://github.com/saleor/saleor-dashboard/pull/6584) [`d3e3f58`](https://github.com/saleor/saleor-dashboard/commit/d3e3f58de1f7a8c0959073239585ad6e2be7474e) Thanks [@mirekm](https://github.com/mirekm)! - Order details now show clearer, merchant-friendly dates in the header. Instead of an unlabeled timestamp, merchants will see labels like “Placed today at 10:30 AM” or “Created Jan 15 at 10:30 AM” for draft orders, with the exact timezone-aware timestamp available on hover.
+
+- [#6598](https://github.com/saleor/saleor-dashboard/pull/6598) [`4469500`](https://github.com/saleor/saleor-dashboard/commit/446950052f240916bb492ba73b828d12a6b2ef4c) Thanks [@mirekm](https://github.com/mirekm)! - Drop product sidebar spacing between Taxes and app app widgets
+
 ## 3.23.6
 
 ### Patch Changes

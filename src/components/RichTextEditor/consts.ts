@@ -52,6 +52,15 @@ export const tools: Record<string, ToolConstructable | ToolSettings> = {
     class: getTool(Quote),
     inlineToolbar,
   },
+  table: {
+    // @ts-expect-error Type mismatch between editorjs libraries (@editorjs/table and @editorjs/editorjs)
+    class: Table,
+    inlineToolbar,
+    config: {
+      rows: 2,
+      cols: 2,
+    },
+  },
   paragraph: {
     class: getTool(Paragraph),
     inlineToolbar,

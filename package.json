@@ -1,6 +1,6 @@
 {
   "name": "saleor-dashboard",
-  "version": "3.23.6",
+  "version": "3.23.8",
   "repository": {
     "type": "git",
     "url": "git://github.com/saleor/saleor-dashboard.git"
@@ -185,7 +185,7 @@
     "@graphql-eslint/eslint-plugin": "^4.4.0",
     "@mizdra/graphql-codegen-typescript-fabbrica": "^0.6.1",
     "@playwright/test": "1.58.2",
-    "@saleor/app-sdk": "1.7.0",
+    "@saleor/app-sdk": "1.9.0",
     "@sentry/cli": "^2.58.2",
     "@storybook/addon-mcp": "^0.4.1",
     "@storybook/addon-vitest": "10.2.19",
@@ -219,6 +219,7 @@
     "dotenv": "^10.0.0",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-depend": "^1.5.0",
     "eslint-plugin-formatjs": "^5.4.2",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-react": "^7.37.5",
